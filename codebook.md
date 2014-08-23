@@ -1,10 +1,12 @@
 Code Book for Getting and Cleaning Data Course Project
+
 This code book that describes the variables, the data, and any transformations or work that you performed to clean up the data
-•Step 1: "Merges the training and the test sets to create one data set."
-•Step 2: "Extracts only the measurements on the mean and standard deviation for each measurement."
-•Step 3: "Uses descriptive activity names to name the activities in the data set."
-•Step 4: "Appropriately labels the data set with descriptive activity names." 
-•Step 5: "Creates a second, independent tidy data set with the average of each variable for each activity and each subject."
+
+Step 1: "Merges the training and the test sets to create one data set."
+Step 2: "Extracts only the measurements on the mean and standard deviation for each measurement."
+Step 3: "Uses descriptive activity names to name the activities in the data set."
+Step 4: "Appropriately labels the data set with descriptive activity names." 
+Step 5: "Creates a second, independent tidy data set with the average of each variable for each activity and each subject."
 
 Source Data 
 A full description of the data used in this project can be found at [The UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) 
@@ -14,11 +16,10 @@ A full description of the data used in this project can be found at [The UCI Mac
 
 
 Raw data set
-In order to create a raw data set, the following regular expression was used:  -(mean|std)[(] . I.e. all variables containing  -mean(  or  -std(  in their names were filtered.
 
 Totally, the raw data set contains 68 variables:
-•  subject  - An identifier of the subject who carried out the experiment.
-•  label  - An activity label.
+â€¢  subject  - An identifier of the subject who carried out the experiment.
+â€¢  label  - An activity label.
 
 Plus 66 filtered features mined as described below.
 
@@ -30,36 +31,36 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 
 These signals were used to estimate variables of the feature vector for each pattern:
  -XYZ  is used to denote 3-axial signals in the X, Y and Z directions.
-• tBodyAcc-XYZ 
-• tGravityAcc-XYZ 
-• tBodyAccJerk-XYZ 
-• tBodyGyro-XYZ 
-• tBodyGyroJerk-XYZ 
-• tBodyAccMag 
-• tGravityAccMag 
-• tBodyAccJerkMag 
-• tBodyGyroMag 
-• tBodyGyroJerkMag 
-• fBodyAcc-XYZ 
-• fBodyAccJerk-XYZ 
-• fBodyGyro-XYZ 
-• fBodyAccMag 
-• fBodyAccJerkMag 
-• fBodyGyroMag 
-• fBodyGyroJerkMag 
+â€¢ tBodyAcc-XYZ 
+â€¢ tGravityAcc-XYZ 
+â€¢ tBodyAccJerk-XYZ 
+â€¢ tBodyGyro-XYZ 
+â€¢ tBodyGyroJerk-XYZ 
+â€¢ tBodyAccMag 
+â€¢ tGravityAccMag 
+â€¢ tBodyAccJerkMag 
+â€¢ tBodyGyroMag 
+â€¢ tBodyGyroJerkMag 
+â€¢ fBodyAcc-XYZ 
+â€¢ fBodyAccJerk-XYZ 
+â€¢ fBodyGyro-XYZ 
+â€¢ fBodyAccMag 
+â€¢ fBodyAccJerkMag 
+â€¢ fBodyGyroMag 
+â€¢ fBodyGyroJerkMag 
 
 The set of variables that were estimated from these signals are: 
-•  mean() : Mean value
-•  std() : Standard deviation
+â€¢  mean() : Mean value
+â€¢  std() : Standard deviation
 
 
 
 Tidy data set
 Tidy data set contains the same variables as the raw does, but the variables were renamed according to following rules:
-•  All lower case when possible  - the variables names were not converted to lower case, since it would make them unreadable. Instead, the variable names were converted to satisfy  camlCase  rule.
-•  Descriptive (Diagnosis versus Dx)  - the variable names are descriptive, so nothing special should be done.
-•  Not duplicated  - the variable names are unique, so again nothing special had to be done.
-•  Not have underscores or dots or white spaces  - dashes and parentheses were removed from variable names.
+â€¢  All lower case when possible  - the variables names were not converted to lower case, since it would make them unreadable. Instead, the variable names were converted to satisfy  camlCase  rule.
+â€¢  Descriptive (Diagnosis versus Dx)  - the variable names are descriptive, so nothing special should be done.
+â€¢  Not duplicated  - the variable names are unique, so again nothing special had to be done.
+â€¢  Not have underscores or dots or white spaces  - dashes and parentheses were removed from variable names.
 
 To satisfy the requirements above, the following replacements were performed:
 1.Replace  -mean  with  Mean  
@@ -69,12 +70,7 @@ To satisfy the requirements above, the following replacements were performed:
 
 
 
-Variables in raw and tidy data set
-
-Raw data set
-
-Tidy data set
-
+Variables in tidy data set
 
  [1] "activityId"                      "subjectId"                      
  [3] "timeBodyAccMagnitudeMean"        "timeBodyAccMagnitudeStdDev"     
