@@ -84,7 +84,7 @@ names <- gsub("GyroMag","GyroMagnitude",names)
 setnames(finalData, names) 
 
 
-# 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject.  
+# Create a second, independent tidy data set with the average of each variable for each activity and each subject.  
 # Create a new table, finalDataNoActivityType without the activityType column 
 finalDataNoActivityType <- finalData[,names(finalData) != 'activityType']; 
 
